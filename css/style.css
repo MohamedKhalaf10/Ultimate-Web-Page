@@ -496,8 +496,8 @@ header .mega-menu .other-links ul li a {
   align-items: center;
   gap: 30px;
   flex-direction: column;
-  border: 1px solid #ccc;
   padding-bottom: 30px;
+  border: 1px solid #ccc;
 }
 .features .content .box .image {
   width: 100%;
@@ -612,6 +612,56 @@ header .mega-menu .other-links ul li a {
   background-color: var(--main-color);
 }
 /* End Features */
+/* Start Testimonials */
+.testimonials {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: var(--section-background-alt);
+}
+.testimonials .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.testimonials .content .box {
+  background-color: white;
+  padding: 20px;
+  width: 300px;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px (0, 0, 0/0.7);
+}
+.testimonials .content .box img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  top: -25px;
+  border: 7px solid var(--section-background-alt);
+}
+.testimonials .content .box h4 {
+  margin-bottom: 5px;
+  color: var(--main-color);
+}
+.testimonials .content .box span {
+  display: block;
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.testimonials .content .box .stars i.fas {
+  color: gold;
+}
+.testimonials .content .box p {
+  color: #777;
+  margin-top: 10px;
+  line-height: 1.6;
+  font-size: 13px;
+}
+/* End Testimonials */
 /* Start Animayion */
 @keyframes up-down {
   0%,
