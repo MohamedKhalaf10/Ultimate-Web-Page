@@ -631,7 +631,7 @@ header .mega-menu .other-links ul li a {
   width: 300px;
   position: relative;
   border-radius: 6px;
-  box-shadow: 0 2px 4px (0, 0, 0/0.7);
+  box-shadow: 0 2px 4px (0, 0, 0, 0.7);
 }
 .testimonials .content .box img {
   width: 70px;
@@ -662,6 +662,85 @@ header .mega-menu .other-links ul li a {
   font-size: 13px;
 }
 /* End Testimonials */
+/* Start Team Members */
+.team-members {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.team-members .special-heading {
+  margin-bottom: 120px;
+}
+.team-members .content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 85px;
+}
+.team-members .content .box {
+  position: relative;
+}
+.team-members .content .box::before {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 370px;
+  background-color: var(--section-background-alt);
+  border-radius: 10px;
+  left: 50px;
+  top: -50px;
+  z-index: -2;
+}
+.team-members .content .box::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 370px;
+  background-color: #ddd;
+  border-radius: 10px;
+  right: -50px;
+  top: -50px;
+  z-index: -1;
+  transition: var(--main-transition);
+}
+.team-members .content .box:hover::after {
+  width: 250px;
+}
+.team-members .content .box img {
+  position: relative;
+  width: 250px;
+  border-radius: 10px;
+  transition: var(--main-transition);
+}
+.team-members .content .box:hover img {
+  filter: grayscale(100%);
+}
+
+.team-members .content .box .socials {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  text-align: center;
+  right: -35px;
+  top: 125px;
+  transform: translateY(-50%);
+}
+.team-members .content .box .socials a {
+  color: #666;
+}
+.team-members .content .box h4 {
+  color: var(--main-color);
+  margin: 10px 0 10px 65px;
+  transition: var(--main-transition);
+}
+.team-members .content .box:hover h4 {
+  color: #666;
+}
+.team-members .content .box p {
+  margin: 10px 0 10px 65px;
+  font-size: 12px;
+}
+/* End Team Members */
 /* Start Animayion */
 @keyframes up-down {
   0%,
