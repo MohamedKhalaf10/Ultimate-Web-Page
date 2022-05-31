@@ -1,8 +1,6 @@
-const otherLinks = document.querySelector("#other");
-const megaMenu = document.querySelector(".mega-menu");
-
-const ourSkills = document.querySelector("#our-skills");
-const progs = [...document.querySelectorAll(".progress span")];
+/* Start Landing */
+let otherLinks = document.querySelector("#other");
+let megaMenu = document.querySelector(".mega-menu");
 
 otherLinks.addEventListener("click", (e) => {
   e.preventDefault();
@@ -14,6 +12,10 @@ otherLinks.addEventListener("click", (e) => {
     megaMenu.style.opacity = "0";
   }
 });
+/* End Landing */
+/* Start Our Skills */
+let ourSkills = document.querySelector("#our-skills");
+let progs = [...document.querySelectorAll(".progress span")];
 
 window.onscroll = () => {
   if (window.scrollY >= ourSkills.offsetTop - 300) {
@@ -22,3 +24,41 @@ window.onscroll = () => {
     }
   }
 };
+/* End Our Skills */
+/* Start Latest Events */
+
+// Get Event Date
+let eventDate = new Date("Jun 31, 2022 23:59:59").getTime();
+
+let counter = setInterval(() => {
+  // Get Date Now
+  let dateNow = new Date().getTime();
+
+  // Find Diffrence Beween Now and CountDown Date
+  let dateDiff = eventDate - dateNow;
+
+  // Get Time Units
+  let days = Math.floor(dateDiff / (1000 * 60 * 60 * 24));
+  let hours = Math.floor(dateDiff / (1000 * 60 * 60)) % 24;
+  let minutes = Math.floor(dateDiff / (1000 * 60)) % 60;
+  let seconds = Math.floor(dateDiff / 1000) % 60;
+
+  // Display Time
+  document.querySelector("#days").innerHTML = days < 10 ? `0${days}` : days;
+  document.querySelector("#hours").innerHTML = hours < 10 ? `0${hours}` : hours;
+  document.querySelector("#minutes").innerHTML =
+    minutes < 10 ? `0${minutes}` : minutes;
+  document.querySelector("#seconds").innerHTML =
+    seconds < 10 ? `0${seconds}` : seconds;
+
+  // If Time is Up
+  if (dateDiff < 0) {
+    clearInterval(counter);
+    document.querySelector("#days").innerHTML = "00";
+    document.querySelector("#hours").innerHTML = "00";
+    document.querySelector("#minutes").innerHTML = "00";
+    document.querySelector("#seconds").innerHTML = "00";
+  }
+}, 1000);
+
+/* End Latest Events */

@@ -1027,7 +1027,7 @@ header .mega-menu .other-links ul li a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid #ccc;
+  border: 1px solid #d4d4d4;
   border-radius: 6px;
   overflow: hidden;
 }
@@ -1050,7 +1050,7 @@ header .mega-menu .other-links ul li a {
   left: 0;
   width: 100%;
   height: 1px;
-  background-color: #ccc;
+  background-color: #d4d4d4;
 }
 .latest-events .content .info .text p {
   color: #777;
@@ -1084,8 +1084,15 @@ header .mega-menu .other-links ul li a {
     margin-right: 5px;
   }
 }
+.latest-events .email form input[type="email"]:focus {
+  outline: none;
+}
 .latest-events .email form input[type="email"]::placeholder {
   color: #777;
+  transition: var(--main-transition);
+}
+.latest-events .email form input[type="email"]:focus::placeholder {
+  opacity: 0;
 }
 .latest-events .email form input[type="submit"] {
   border: none;
@@ -1101,6 +1108,173 @@ header .mega-menu .other-links ul li a {
   }
 }
 /* End Latest Events */
+/* Start Pricing Plans */
+.pricing-plans {
+  position: relative;
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: var(--section-background-alt);
+}
+.pricing-plans .top-dots {
+  position: absolute;
+  width: 120px;
+  top: 160px;
+  right: 0;
+}
+.pricing-plans .bottom-dots {
+  position: absolute;
+  width: 120px;
+  bottom: 160px;
+  left: 0;
+}
+@media (max-width: 1200px) {
+  .pricing-plans > img {
+    display: none;
+  }
+}
+.pricing-plans .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.pricing-plans .content .plan {
+  position: relative;
+  background-color: white;
+  text-align: center;
+  padding-bottom: 50px;
+  padding-top: 10px;
+  box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.13), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+  z-index: 1;
+  overflow: hidden;
+}
+.pricing-plans .content .plan::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 50%;
+  background-color: #f6f6f6;
+  transition: var(--main-transition);
+  z-index: -1;
+}
+.pricing-plans .content .plan::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 50%;
+  background-color: #f6f6f6;
+  transition: var(--main-transition);
+  z-index: -1;
+}
+.pricing-plans .content .plan:hover::before,
+.pricing-plans .content .plan:hover::after {
+  width: 100%;
+}
+.pricing-plans .content .plan:nth-child(2) {
+  margin-bottom: 30px;
+}
+@media (max-width: 991px) {
+  .pricing-plans .content .plan:nth-child(2) {
+    margin: 0;
+  }
+}
+.pricing-plans .content .plan .info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 80px;
+}
+.pricing-plans .content .plan:nth-child(2) .info::before {
+  content: "Most Popular";
+  position: absolute;
+  background-color: var(--main-color);
+  writing-mode: vertical-rl;
+  width: 30px;
+  height: 120px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -12px;
+  right: 20px;
+  font-size: 13px;
+}
+.pricing-plans .content .plan:nth-child(2) .info::after {
+  content: "";
+  position: absolute;
+  border-width: 15px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+  top: 80px;
+  right: 20px;
+  transition: var(--main-transition);
+}
+.pricing-plans .content .plan:nth-child(2):hover .info::after {
+  border-color: transparent transparent #f6f6f6 transparent;
+}
+.pricing-plans .content .plan h3 {
+  font-weight: bold;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+.pricing-plans .content .plan img {
+  margin-bottom: 30px;
+  width: 70px;
+}
+.pricing-plans .content .plan .price {
+  position: relative;
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--main-color);
+  margin-bottom: 5px;
+}
+.pricing-plans .content .plan .note {
+  color: #777;
+  font-size: 11px;
+  margin-bottom: 20px;
+}
+.pricing-plans .content .plan ul {
+  position: relative;
+  font-size: 13px;
+  margin-bottom: 50px;
+  text-align: left;
+}
+.pricing-plans .content .plan ul li {
+  position: relative;
+  padding: 20px 150px 20px 30px;
+  border-top: 1px solid #eee;
+}
+.pricing-plans .content .plan ul li::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f00c";
+  position: absolute;
+  font-weight: 900;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--main-color);
+}
+.pricing-plans .content .plan a {
+  color: var(--main-color);
+  padding: 10px 30px;
+  border: 2px solid var(--main-color);
+  border-radius: 6px;
+  font-weight: bold;
+  transition: var(--main-transition);
+}
+.pricing-plans .content .plan a:hover {
+  color: white;
+  background-color: var(--main-color);
+}
+/* End Pricing Plans */
 /* Start Animayion */
 @keyframes up-down {
   0%,
