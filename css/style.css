@@ -1333,8 +1333,67 @@ header .mega-menu .other-links ul li a {
   background-color: white;
   padding: 17px;
 }
-
 /* End Top Videos */
+/* Start Stats */
+.stats {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: var(--section-background-alt);
+  text-align: center;
+}
+.stats h1 {
+  margin: 0 auto;
+  width: fit-content;
+}
+.stats .content {
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.stats .content .box {
+  padding: 20px 60px;
+  background-color: white;
+  position: relative;
+  flex-basis: 20%;
+}
+.stats .content .box::before {
+  content: "";
+  position: absolute;
+  background-color: var(--main-color);
+  width: 2px;
+  height: 0;
+  left: 0;
+  bottom: 0;
+  transition: var(--main-transition);
+}
+.stats .content .box::after {
+  content: "";
+  position: absolute;
+  background-color: var(--main-color);
+  width: 2px;
+  height: 0;
+  right: 0;
+  top: 0;
+  transition: var(--main-transition);
+}
+.stats .content .box:hover::before,
+.stats .content .box:hover::after {
+  height: 100%;
+}
+.stats .content .box .num {
+  display: block;
+  font-weight: 900;
+  font-size: 40px;
+  margin: 10px 0;
+}
+.stats .content .box .info {
+  font-style: italic;
+  color: var(--main-color);
+  font-size: 15px;
+}
+/* End Stats */
 /* Start Animayion */
 @keyframes up-down {
   0%,
