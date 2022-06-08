@@ -17,7 +17,7 @@ otherLinks.addEventListener("click", (e) => {
 let ourSkills = document.querySelector("#our-skills");
 let progs = [...document.querySelectorAll(".progress span")];
 
-window.onscroll = () => {
+let skillsFunc = () => {
   if (window.scrollY >= ourSkills.offsetTop - 300) {
     for (let prog of progs) {
       prog.style.width = prog.dataset.width;
@@ -60,5 +60,33 @@ let counter = setInterval(() => {
     document.querySelector("#seconds").innerHTML = "00";
   }
 }, 1000);
-
 /* End Latest Events */
+/* Start Stats */
+
+// Get Stats Section
+let stats = document.querySelector("#stats");
+// Get Nums
+let nums = [...document.querySelectorAll(".num")];
+
+// Start Count When Section Is In View
+let statsFunc = () => {
+  for (let num of nums) {
+    if (window.scrollY >= stats.offsetTop - 300) {
+      let counter = setInterval(() => {
+        if (num.innerHTML !== num.dataset.achivement) {
+          num.innerHTML++;
+        } else {
+          clearInterval(counter);
+        }
+      }, 2000 / num.dataset.achivement);
+    }
+  }
+};
+/* End Stats */
+
+/* Start On Scroll Functions */
+window.onscroll = () => {
+  skillsFunc();
+  statsFunc();
+};
+/* End On Scroll Functions */
