@@ -1408,6 +1408,7 @@ header .mega-menu .other-links ul li a {
   padding: 140px;
   background-image: url(../images/discount-background1.jpg);
   background-size: cover;
+  animation: image-change 15s infinite;
 }
 .discount .info::before {
   content: "";
@@ -1417,7 +1418,8 @@ header .mega-menu .other-links ul li a {
   left: 0;
   top: 0;
   background-color: var(--main-color-alt);
-  opacity: 0.97;
+  opacity: 0.96;
+  animation: opacity-change 15s infinite;
 }
 .discount .info .content {
   position: relative;
@@ -1583,4 +1585,24 @@ header .mega-menu .other-links ul li a {
     height: 150%;
   }
 }
+@keyframes image-change {
+  25% {
+    background-image: url(../images/discount-background2.jpg);
+  }
+  75% {
+    background-image: url(../images/discount-background1.jpg);
+  }
+}
+@keyframes opacity-change {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0.96;
+  }
+}
+
 /* End Animation */
