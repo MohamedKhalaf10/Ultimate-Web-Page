@@ -1498,6 +1498,98 @@ header .mega-menu .other-links ul li a {
   font-weight: 700;
 }
 /* End Stats */
+/* Start Footer */
+footer {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: rgb(17, 17, 17);
+  color: #777;
+}
+footer .container {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+footer .logo {
+  flex-basis: 20%;
+}
+footer .logo h1 {
+  color: white;
+  margin: 0 0 20px 0;
+}
+footer .logo .social {
+  display: flex;
+  gap: 10px;
+}
+footer .logo .social a {
+  display: block;
+  padding: 12px;
+  color: #777;
+  background-color: rgb(34, 34, 34);
+}
+footer .logo p {
+  font-size: 13px;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+footer .important-links {
+  flex-basis: 20%;
+}
+footer .important-links .link:not(:last-child) {
+  padding: 10px 0;
+  border-bottom: 1px solid #777;
+  margin-bottom: 10px;
+}
+footer .important-links .link i {
+  margin-right: 10px;
+  color: var(--main-color);
+}
+footer .important-links .link a {
+  color: #777;
+  font-size: 13px;
+}
+footer .info {
+  flex-basis: 20%;
+}
+footer .info .box {
+  display: flex;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  align-items: center;
+  font-style: italic;
+}
+footer .info .box i {
+  color: var(--main-color);
+  margin-right: 15px;
+}
+footer .info .box address {
+  font-size: 13px;
+}
+footer .info .box span {
+  font-size: 13px;
+}
+footer .mini-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  flex-basis: 20%;
+}
+@media (max-width: 767px) {
+  footer .logo,
+  footer .important-links,
+  footer .info,
+  footer .mini-gallery {
+    flex-basis: 100%;
+  }
+}
+footer .mini-gallery img {
+  width: 50px;
+  border: 3px solid white;
+  flex-basis: 25%;
+}
+/* End Footer */
 /* Start Animayion */
 @keyframes up-down {
   0%,
